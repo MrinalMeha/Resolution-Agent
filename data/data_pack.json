@@ -1,0 +1,82 @@
+{
+  "_source": "Assignment 3 Data Pack - Customer-Facing Resolution Agent (Airline Disruption). Only this file + policy.py rules are used as ground truth.",
+  "as_of": "2026-09-23",
+  "customers": {
+    "SK4821X": {
+      "name": "Priya Nair",
+      "tier": "Gold",
+      "email": "priya.nair@example.com",
+      "phone": "+91-98xxxxxxx1",
+      "flights_last_12m": 6,
+      "prior_complaints": "1 prior complaint (delayed baggage, resolved with voucher)"
+    },
+    "TR1190B": {
+      "name": "Arvind Kulkarni",
+      "tier": "Silver",
+      "email": "arvind.kulkarni@example.com",
+      "phone": "+91-98xxxxxxx2",
+      "flights_last_12m": 3,
+      "prior_complaints": "No prior complaints"
+    },
+    "WL7742": {
+      "name": "Meher Kaur",
+      "tier": "Platinum",
+      "email": "meher.kaur@example.com",
+      "phone": "+91-98xxxxxxx3",
+      "flights_last_12m": 10,
+      "prior_complaints": "1 prior complaint (overbooking, resolved with a tier-status upgrade)"
+    }
+  },
+  "segments": [
+    {
+      "pnr": "SK4821X",
+      "flight": "SK-204",
+      "route": "Delhi → Goa",
+      "date": "2026-09-23",
+      "scheduled_departure": "18:40",
+      "status": "CANCELLED",
+      "cause": "operational",
+      "delay_minutes": null,
+      "new_departure": null
+    },
+    {
+      "pnr": "SK4821X",
+      "flight": "RETURN",
+      "route": "Goa → Delhi",
+      "date": "2026-09-25",
+      "scheduled_departure": "16:20",
+      "status": "UNAFFECTED",
+      "cause": null,
+      "delay_minutes": null,
+      "new_departure": null
+    },
+    {
+      "pnr": "TR1190B",
+      "flight": "SK-118",
+      "route": "Mumbai → Bengaluru",
+      "date": "2026-09-23",
+      "scheduled_departure": "07:10",
+      "status": "DELAYED",
+      "cause": "operational",
+      "delay_minutes": 240,
+      "new_departure": "11:10"
+    },
+    {
+      "pnr": "WL7742",
+      "flight": "SK-305",
+      "route": "Delhi → Hyderabad",
+      "date": "2026-09-23",
+      "scheduled_departure": "14:00",
+      "status": "DELAYED",
+      "cause": "operational",
+      "delay_minutes": 360,
+      "new_departure": "20:00",
+      "voluntary_alternatives": [
+        {
+          "description": "A different, higher-fare flight the customer asked to move to (Scenario 3). No flight number is given in the data pack.",
+          "fare_difference_inr": 2000
+        }
+      ]
+    }
+  ]
+}
